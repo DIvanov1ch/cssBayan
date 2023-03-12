@@ -35,11 +35,6 @@ hr {
   overflow: visible; /* 2 */
 }
   
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-  
 a {
   background-color: transparent;
 }
@@ -60,7 +55,6 @@ div:focus, input:focus{
 }
 
   /* Start */
-
 .wrapper {
   max-width: 80vw;
   min-height: 100vh;
@@ -69,8 +63,8 @@ div:focus, input:focus{
 }
 
 .meme-title {
-  margin: 0.83em 0 0 0;
-  padding: 0 0.8em 0.83em 0;
+  margin: 0;
+  padding: 0.83em 0.8em 0.83em 0;
   font-size: 1.375em;
   color: #0000ff;
 }
@@ -90,6 +84,7 @@ div:focus, input:focus{
 }
 
 .bayan__meme:focus .bayan__meme-img {
+  margin-bottom: 0.5em;
   max-width: 100%;
   height: 45vh;
   background-size: 50%;
@@ -99,23 +94,23 @@ div:focus, input:focus{
 }
 
 .first-image {
-  background: url("assets/img/add-css-to-website.jpg") no-repeat center;
+  background: url("assets/img/add-css-to-website.webp") no-repeat center;
 }
 
 .second-image {
-  background: url("assets/img/look-like-backend-developer.jpg") no-repeat center;
+  background: url("assets/img/look-like-backend-developer.webp") no-repeat center;
 }
 
 .third-image {
-  background: url("assets/img/most-popular-language.jpg") no-repeat center;
+  background: url("assets/img/most-popular-language.webp") no-repeat center;
 }
 
 .fourth-image {
-  background: url("assets/img/strongly-typed-vs-js.jpg") no-repeat center;
+  background: url("assets/img/strongly-typed-vs-js.webp") no-repeat center;
 }
 
 .fifth-image {
-  background: url("assets/img/js-in-backend.jpg") no-repeat center;
+  background: url("assets/img/js-in-backend.webp") no-repeat center;
 }
 
 /* desktop start */
@@ -153,6 +148,7 @@ div:focus, input:focus{
   }
   
   .bayan__meme:hover .bayan__meme-img {
+    margin-bottom: 0.5em;
     max-width: 100%;
     height: 45vh;
     background-size: 50%;
@@ -162,6 +158,7 @@ div:focus, input:focus{
   }
 
   .bayan__meme:active .bayan__meme-img {
+    margin-bottom: 0.5em;
     max-width: 100%;
     height: 45vh;
     background-size: 50%;
@@ -169,7 +166,6 @@ div:focus, input:focus{
     visibility: visible;
     transition: 0.05s opacity, 0.05s visibility;
   }
-  
 
 }
 /* desktop end
@@ -190,6 +186,7 @@ div:focus, input:focus{
   }
 
   .bayan__meme:focus .bayan__meme-img {
+    margin-bottom: 0.5em;
     max-width: 100%;
     height: 25vh;
     background-size: 70%;
@@ -215,14 +212,15 @@ div:focus, input:focus{
   
   .meme-title {
     font-size: 1em;
-    padding: 0 0.6em 0.63em 0;
+    padding: 0.63em 0.6em 0.63em 0;
   }
   
   .bayan__meme:active .bayan__meme-img,
   .bayan__meme:focus .bayan__meme-img {
+    margin-bottom: 0.5em;
     max-width: 100%;
-    height: 20vh;
-    background-size: 70%;
+    height: 28vh;
+    background-size: 90%;
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
