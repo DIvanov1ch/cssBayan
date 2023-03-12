@@ -6,6 +6,11 @@ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
   
 body {
@@ -62,21 +67,39 @@ div:focus, input:focus{
   padding: 0 4em;
 }
 
+.meme-title__box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .meme-title {
   margin: 0;
   padding: 0.83em 0.8em 0.83em 0;
   font-size: 1.375em;
   color: #0000ff;
+  transition: 0.3s;
+}
+
+.meme-title__icon {
+  padding: 0.83em 0.8em;
+  width: 2em;
+  background: url("assets/svg/plus.svg") no-repeat center;
+  background-size: 2em;
+  color: #0000ff;
+  visibility: hidden;
+  transition: 0.1s;
 }
 
 .bayan__meme {
-  border-top: solid 1.5px #c7c3c3;
+  border-top: solid 0.1em #c7c3c3;
 }
 
 .bayan__meme-img {
   visibility: hidden;
-  transition: 0.5s opacity, 0.5s visibility;
   opacity: 0;
+  height: 0;
+  transition: height 1s;
 }
 
 .bayan__meme:focus .meme-title {
@@ -90,7 +113,7 @@ div:focus, input:focus{
   background-size: 50%;
   opacity: 1;
   visibility: visible;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .first-image {
@@ -123,48 +146,53 @@ div:focus, input:focus{
   
   .bayan__meme-container:hover .meme-title {
     color: #000000;
-    background: url("assets/svg/plus.svg") no-repeat right;
-    background-size: 1em;
+    transition: 0.3s;
+  }
+
+  .bayan__meme-container:hover .meme-title__icon {
+    color: #000000;
+    visibility: visible;
+    transition: 0.3s;
   }
 
   .bayan__meme:focus .meme-title {
     color: #000000;
+    transition: 0.3s;
   }
 
-  .bayan__meme-container:hover .bayan__meme:focus .meme-title {
-    background: url("assets/svg/cross.svg") no-repeat right;
-    background-size: 1em;
+  .bayan__meme:focus .meme-title__icon {
+    color: #000000;
+    visibility: hidden;
+    transform: rotate(45deg);
+  }  
+
+  .bayan__meme:hover .meme-title__icon,
+  .bayan__meme-container:hover .bayan__meme:focus .meme-title__icon {
+    color: #000000;
+    visibility: visible;
+    transform: rotate(45deg);
   }
 
-  .bayan__meme:hover .meme-title {
-    background: url("assets/svg/cross.svg") no-repeat right;
-    background-size: 1em;
-  }
-
-  .bayan__meme:active .meme-title {
-    opacity: 0.6;
+  .bayan__meme:active .meme-title,
+  .bayan__meme:active .meme-title__icon {
     filter: invert(9%) sepia(89%) saturate(6373%) hue-rotate(246deg) brightness(109%) contrast(150%);
-    transition: 0.05s;
+    opacity: 0.6;
+    transition: 0.3s;
   }
   
-  .bayan__meme:hover .bayan__meme-img {
+  .bayan__meme:hover .bayan__meme-img,
+  .bayan__meme:active .bayan__meme-img {
     margin-bottom: 0.5em;
     max-width: 100%;
     height: 45vh;
     background-size: 50%;
     opacity: 1;
     visibility: visible;
-    transition: 0.5s;
+    transition: 1s;
   }
 
   .bayan__meme:active .bayan__meme-img {
-    margin-bottom: 0.5em;
-    max-width: 100%;
-    height: 45vh;
-    background-size: 50%;
     opacity: 0.8;
-    visibility: visible;
-    transition: 0.05s opacity, 0.05s visibility;
   }
 
 }
@@ -182,7 +210,12 @@ div:focus, input:focus{
   }
   
   .meme-title {
+    width: 100%;
     font-size: 1.25em;
+  }
+
+  .meme-title__icon {
+    display: none;
   }
 
   .bayan__meme:focus .bayan__meme-img {
@@ -192,7 +225,7 @@ div:focus, input:focus{
     background-size: 70%;
     opacity: 1;
     visibility: visible;
-    transition: 0.5s;
+    transition: 1s;
   }
 
 }
@@ -211,8 +244,13 @@ div:focus, input:focus{
   }
   
   .meme-title {
+    width: 100%;
     font-size: 1em;
     padding: 0.63em 0.6em 0.63em 0;
+  }
+
+  .meme-title__icon {
+    display: none;
   }
   
   .bayan__meme:active .bayan__meme-img,
@@ -223,7 +261,7 @@ div:focus, input:focus{
     background-size: 90%;
     opacity: 1;
     visibility: visible;
-    transition: 0.5s;
+    transition: 1s;
   }
 
 }
