@@ -8,18 +8,14 @@ html {
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
-
-::-webkit-scrollbar {
-  width: 0;
-}
   
 body {
-  max-width: 1920px;
+  max-width: 120em;
   margin: 0 auto;
   padding: 0;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 400;
   font-style: normal;
   background-color: #f1f1f7;
@@ -136,8 +132,8 @@ div:focus, input:focus{
   background: url("assets/img/js-in-backend.webp") no-repeat center;
 }
 
-/* desktop start */
-@media (min-width: 821px) {
+/* when hover is supported */
+@media (hover: hover) {
 
   .bayan__meme-container:hover {
     cursor: pointer;
@@ -155,6 +151,46 @@ div:focus, input:focus{
     transition: 0.3s;
   }
 
+  .bayan__meme:hover .meme-title__icon,
+  .bayan__meme-container:hover .bayan__meme:focus .meme-title__icon {
+    color: #000000;
+    visibility: visible;
+    transform: rotate(45deg);
+  }
+
+}
+
+@media (min-width: 821px) and (hover: hover) {
+
+  .bayan__meme:hover .bayan__meme-img {
+    margin-bottom: 0.5em;
+    max-width: 100%;
+    height: 45vh;
+    background-size: 50%;
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+  }
+
+}
+
+@media (min-width: 821px) and (max-width: 1024px) {
+
+  .bayan__meme:focus .bayan__meme-img {
+    margin-bottom: 0.5em;
+    max-width: 100%;
+    height: 25vh;
+    background-size: 70%;
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+  }
+
+}
+
+/* desktop start */
+@media (min-width: 821px) {
+  
   .bayan__meme:focus .meme-title {
     color: #000000;
     transition: 0.3s;
@@ -166,13 +202,6 @@ div:focus, input:focus{
     transform: rotate(45deg);
   }  
 
-  .bayan__meme:hover .meme-title__icon,
-  .bayan__meme-container:hover .bayan__meme:focus .meme-title__icon {
-    color: #000000;
-    visibility: visible;
-    transform: rotate(45deg);
-  }
-
   .bayan__meme:active .meme-title,
   .bayan__meme:active .meme-title__icon {
     filter: invert(9%) sepia(89%) saturate(6373%) hue-rotate(246deg) brightness(109%) contrast(150%);
@@ -180,23 +209,18 @@ div:focus, input:focus{
     transition: 0.3s;
   }
   
-  .bayan__meme:hover .bayan__meme-img,
   .bayan__meme:active .bayan__meme-img {
     margin-bottom: 0.5em;
     max-width: 100%;
     height: 45vh;
     background-size: 50%;
-    opacity: 1;
+    opacity: 0.8;
     visibility: visible;
     transition: 1s;
   }
 
-  .bayan__meme:active .bayan__meme-img {
-    opacity: 0.8;
-  }
-
 }
-/* desktop end
+/* desktop end */
 
 /* tablet start */
 @media (max-width: 820px) {
@@ -231,6 +255,25 @@ div:focus, input:focus{
 }
 /* tablet end */
 
+/* desktop small screens */
+@media (min-width: 769px) and (max-width: 820px) and (hover: hover) {
+
+  .meme-title__icon {
+    display: block;
+  }
+
+  .bayan__meme:hover .bayan__meme-img {
+    margin-bottom: 0.5em;
+    max-width: 100%;
+    height: 25vh;
+    background-size: 70%;
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+  }
+
+}
+
 /* mobile start */
 @media (max-width: 414px) {
 
@@ -253,7 +296,6 @@ div:focus, input:focus{
     display: none;
   }
   
-  .bayan__meme:active .bayan__meme-img,
   .bayan__meme:focus .bayan__meme-img {
     margin-bottom: 0.5em;
     max-width: 100%;
